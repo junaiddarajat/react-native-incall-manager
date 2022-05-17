@@ -124,7 +124,7 @@ class InCallManager {
         }
     }
 
-    getAudioOutputDevices()
+    async getAudioOutputDevices()
     {
         let promise = await _InCallManager.getAudioOutputDevices();
         return promise
