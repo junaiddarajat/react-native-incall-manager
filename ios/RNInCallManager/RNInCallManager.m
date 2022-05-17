@@ -231,7 +231,7 @@ RCT_EXPORT_METHOD(setKeepScreenOn:(BOOL)enable)
     });
 }
 
-RCT_EXPORT_METHOD(getAudioOutputDevices:(NSArray*)routes)
+RCT_EXPORT_METHOD(getAudioOutputDevices)
 {
     NSArray* routes = [_audioSession availableInputs];
     return routes;
