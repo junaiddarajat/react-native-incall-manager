@@ -124,6 +124,11 @@ class InCallManager {
         }
     }
 
+    getAudioOutputDevices()
+    {
+        _InCallManager.getAudioOutputDevices();
+    }
+
     async getAudioUri(audioType, fileType) {
         if (typeof this.audioUriMap[audioType] === "undefined") {
             return null;

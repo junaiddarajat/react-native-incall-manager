@@ -1856,6 +1856,11 @@ public class InCallManagerModule extends ReactContextBaseJavaModule implements L
         return data;
     }
 
+    @ReactMethod
+    public WriteableMap getAudioOutputDevices() {
+        return getAudioDeviceStatusMap();
+    }
+
     private AudioDevice getPreferredAudioDevice() {
         return getPreferredAudioDevice(false);
     }
