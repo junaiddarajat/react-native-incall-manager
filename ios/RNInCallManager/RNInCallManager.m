@@ -233,7 +233,7 @@ RCT_EXPORT_METHOD(setKeepScreenOn:(BOOL)enable)
 
 RCT_EXPORT_METHOD(getAudioOutputDevices:(NSArray*)routes)
 {
-    NSArray* routes = [_audioSession availableInputs]
+    NSArray* routes = [_audioSession availableInputs];
     return routes;
 }
 
