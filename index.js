@@ -124,9 +124,10 @@ class InCallManager {
         }
     }
 
-    getAudioOutputDevices()
+    getAudioOutputDevices(resolve, reject)
     {
-        _InCallManager.getAudioOutputDevices();
+        let promise = _InCallManager.getAudioOutputDevices(resolve, reject);
+        return promise
     }
 
     async getAudioUri(audioType, fileType) {
