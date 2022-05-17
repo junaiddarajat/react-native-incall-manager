@@ -234,6 +234,7 @@ RCT_EXPORT_METHOD(setKeepScreenOn:(BOOL)enable)
 RCT_EXPORT_METHOD(getAudioOutputDevices:(RCTPromiseResolveBlock)resolve
                                       reject:(RCTPromiseRejectBlock)reject)
 {
+    NSError * error;
     NSArray* routes = [_audioSession availableInputs];
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:routes options:NSJSONWritingPrettyPrinted error:&error];
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
