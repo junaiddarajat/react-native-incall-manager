@@ -235,7 +235,10 @@ RCT_EXPORT_METHOD(getAudioOutputDevices:(RCTPromiseResolveBlock)resolve
                                       reject:(RCTPromiseRejectBlock)reject)
 {
     NSArray* routes = [_audioSession availableInputs];
-    resolve(routes);
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:routes options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+
+    resolve(jsonString);
 }
 
 RCT_EXPORT_METHOD(setSpeakerphoneOn:(BOOL)enable)
