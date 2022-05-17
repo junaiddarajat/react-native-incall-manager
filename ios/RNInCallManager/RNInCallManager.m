@@ -231,10 +231,11 @@ RCT_EXPORT_METHOD(setKeepScreenOn:(BOOL)enable)
     });
 }
 
-RCT_EXPORT_METHOD(getAudioOutputDevices)
+RCT_EXPORT_METHOD(getAudioOutputDevices:(RCTPromiseResolveBlock)resolve
+                                      reject:(RCTPromiseRejectBlock)reject)
 {
     NSArray* routes = [_audioSession availableInputs];
-    return routes;
+    resolve(routes);
 }
 
 RCT_EXPORT_METHOD(setSpeakerphoneOn:(BOOL)enable)
